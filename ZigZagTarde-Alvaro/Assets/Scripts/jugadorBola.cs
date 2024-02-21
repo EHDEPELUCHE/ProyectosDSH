@@ -25,7 +25,7 @@ public class jugadorBola : MonoBehaviour
         rb = GetComponent<Rigidbody>();    }
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         camara.transform.position = transform.position + offSet;
         if (Input.GetKeyUp(KeyCode.Space)) 
