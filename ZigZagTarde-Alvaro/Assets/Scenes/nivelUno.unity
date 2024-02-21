@@ -462,6 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camara: {fileID: 319513759}
   suelo: {fileID: 849958071}
+  velocidad: 10
 --- !u!1001 &6652696311598826837
 PrefabInstance:
   m_ObjectHideFlags: 0
