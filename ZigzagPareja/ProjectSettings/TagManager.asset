@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EmpezarBoton
   - Salir
+  - Suelo
   layers:
   - Default
   - TransparentFX
