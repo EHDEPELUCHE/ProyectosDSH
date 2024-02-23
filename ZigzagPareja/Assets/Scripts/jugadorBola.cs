@@ -35,7 +35,9 @@ public class jugadorBola : MonoBehaviour
     void FixedUpdate()
     {
         camara.transform.position = transform.position + offSet;
-        rb.velocity = DireccionActual * velocidad;
+        Vector3 horizontalVelocity = DireccionActual * velocidad;
+        horizontalVelocity.y = rb.velocity.y;  // Mantén la velocidad vertical actual
+        rb.velocity = horizontalVelocity;
     }
 
     private void OnCollisionExit(Collision other) {
@@ -59,10 +61,15 @@ public class jugadorBola : MonoBehaviour
 
     IEnumerator BorrarSuelo(GameObject suelo) {
         yield return new WaitForSeconds(1.0f);
-        suelo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        suelo.gameObject.GetComponent<Rigidbody>().useGravity = false;
-        Destroy(suelo);
-        suelos--;
+        if (suelo != null) {
+            Rigidbody sueloRb = suelo.GetComponent<Rigidbody>();
+            if (sueloRb != null) {
+                sueloRb.isKinematic = false;
+                sueloRb.useGravity = false;
+            }
+            Destroy(suelo);
+            suelos--;
+        }
     }
 
     void cambiarDireccion() {
