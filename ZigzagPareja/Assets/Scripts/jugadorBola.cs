@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class jugadorBola : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class jugadorBola : MonoBehaviour
     public Camera camara;
     public GameObject suelo;
     public float velocidad = 10.0f; 
+    public GameObject estrella;
+    public GameObject estrellaesp;
+    public Text textoPuntosBack;
+    public Text textoPuntos;
     //Privadas
     private Vector3 offSet;
     private float ValX, ValZ;
@@ -16,6 +22,7 @@ public class jugadorBola : MonoBehaviour
     private int suelos = 0;
     private int maxSuelo = 8;
     private Rigidbody rb;
+    private int estrellas=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +63,9 @@ public class jugadorBola : MonoBehaviour
             else ValZ += 6.0f;
             Instantiate(suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
             suelos++;
+            aleatorio = Random.Range(0.0f, 1.0f);
+            if (aleatorio > 0.7) Instantiate(estrella, new Vector3(Random.Range((ValX - 3),ValX), 1, Random.Range((ValZ - 3), ValZ)), Quaternion.identity);
+            else if (aleatorio < 0.1) Instantiate(estrellaesp, new Vector3(Random.Range((ValX - 3),ValX), 1, Random.Range((ValZ - 3), ValZ)), Quaternion.identity);
         } else yield return new WaitForSeconds(0.1f);
     }
 
@@ -84,6 +94,26 @@ public class jugadorBola : MonoBehaviour
             ValZ += 6.0f;
             Instantiate(suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
             suelos++;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("EstrellaBasica")){
+            Debug.Log("he tocado una estrella");
+            Destroy(other.gameObject);
+            estrellas++;
+            textoPuntosBack.text = " " + estrellas;
+            textoPuntos.text = " " + estrellas;
+        }else if(other.gameObject.CompareTag("EstrellaEspecial")){
+             Debug.Log("he tocado una estrella especial");
+            Destroy(other.gameObject);
+            estrellas+=5;
+            textoPuntosBack.text = " " + estrellas;
+            textoPuntos.text = " " + estrellas;
+        }
+
+        if(estrellas >= 30){
+            SceneManager.LoadScene("Nivel2", LoadSceneMode.Single);
         }
     }
 }

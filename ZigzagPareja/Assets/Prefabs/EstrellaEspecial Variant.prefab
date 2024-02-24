@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3053978445046310747
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1669532713775767507, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136768693460507552, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52810f2262e502f4bb8219cf44b2e572, type: 2}
+    - target: {fileID: 3623227811319930125, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623227811319930125, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: particulas
+      value: 
+      objectReference: {fileID: 8731978743862717803, guid: 547528a9eea225f41a3343514bb7a640, type: 3}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.158
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6532815
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.27059805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6532815
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.27059805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_Name
+      value: EstrellaEspecial Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+      propertyPath: m_TagString
+      value: EstrellaEspecial
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
