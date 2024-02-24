@@ -23,6 +23,7 @@ public class jugadorBola : MonoBehaviour
     private int maxSuelo = 8;
     private Rigidbody rb;
     private int estrellas=0;
+    private List<GameObject> instancedObjects = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +66,8 @@ public class jugadorBola : MonoBehaviour
             float aleatorio = Random.Range(0.0f, 1.0f);
             if (aleatorio > 0.5) ValX += 6.0f;
             else ValZ += 6.0f;
-            Instantiate(suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
+            GameObject newSuelo = Instantiate(suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
+            instancedObjects.Add(newSuelo);
             suelos++;
             aleatorio = Random.Range(0.0f, 1.0f);
             if (aleatorio > 0.7) Instantiate(estrella, new Vector3(Random.Range((ValX - 3),ValX), 1, Random.Range((ValZ - 3), ValZ)), Quaternion.identity);
@@ -81,6 +83,7 @@ public class jugadorBola : MonoBehaviour
                 sueloRb.isKinematic = false;
                 sueloRb.useGravity = false;
             }
+            instancedObjects.Remove(suelo);
             Destroy(suelo);
             suelos--;
         }
@@ -120,4 +123,10 @@ public class jugadorBola : MonoBehaviour
             SceneManager.LoadScene("Nivel2", LoadSceneMode.Single);
         }
     }
+
+    private void OnDisable() {
+        foreach (GameObject obj in instancedObjects) {
+            if (obj != null) Destroy(obj);
+    }
+}
 }
