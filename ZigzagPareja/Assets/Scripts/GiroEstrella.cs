@@ -12,12 +12,20 @@ public class ChoqueBola : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.up, speed * Time.deltaTime, Space.World ); 
+        EsperaDestruye();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         Vector3 posactual = new Vector3 (transform.position.x, 0.5f, transform.position.z);
         particulasInstance = Instantiate(particulas, posactual, particulas.transform.rotation);
         Destroy(particulasInstance, 5f);  // Destruye la instancia de "particulas" después de 5 segundos
+    }
+
+    void EsperaDestruye(){
+        if(jugadorBola.Destruirya)
+            DestroyImmediate(this,true);   
+        else 
+            Destroy(this, 7f);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
+
 public class jugadorBola : MonoBehaviour
 {
     //Publicas
@@ -23,6 +25,8 @@ public class jugadorBola : MonoBehaviour
     private int maxSuelo = 8;
     private Rigidbody rb;
     private int estrellas=0;
+    public static bool Destruirya = false;
+    
     private List<GameObject> instancedObjects = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -30,16 +34,18 @@ public class jugadorBola : MonoBehaviour
         offSet = camara.transform.position;
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
-        rb = GetComponent<Rigidbody>();    
+        rb = GetComponent<Rigidbody>(); 
+        Destruirya = false;   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space)) 
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonDown(0)) // La segunda condicion es para poder usar el raton o pulsar en el movil
             cambiarDireccion();
         if (gameObject.transform.position.y < 0){
             //Debug.Log("Cayendo");
+            Destruirya = true;
             SceneManager.LoadScene("Derrota", LoadSceneMode.Single);
         }
     }
@@ -120,6 +126,7 @@ public class jugadorBola : MonoBehaviour
         }
 
         if(estrellas >= 30){
+            Destruirya = true;
             SceneManager.LoadScene("Nivel2", LoadSceneMode.Single);
         }
     }
