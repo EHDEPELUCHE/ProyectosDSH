@@ -37,6 +37,10 @@ public class jugadorBola : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space)) 
             cambiarDireccion();
+        if (gameObject.transform.position.y < 0){
+            //Debug.Log("Cayendo");
+            SceneManager.LoadScene("Derrota", LoadSceneMode.Single);
+        }
     }
 
     void FixedUpdate()
@@ -99,13 +103,13 @@ public class jugadorBola : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("EstrellaBasica")){
-            Debug.Log("he tocado una estrella");
+            //Debug.Log("he tocado una estrella");
             Destroy(other.gameObject);
             estrellas++;
             textoPuntosBack.text = " " + estrellas;
             textoPuntos.text = " " + estrellas;
         }else if(other.gameObject.CompareTag("EstrellaEspecial")){
-             Debug.Log("he tocado una estrella especial");
+            //Debug.Log("he tocado una estrella especial");
             Destroy(other.gameObject);
             estrellas+=5;
             textoPuntosBack.text = " " + estrellas;

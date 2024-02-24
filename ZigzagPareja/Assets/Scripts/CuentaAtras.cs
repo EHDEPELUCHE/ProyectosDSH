@@ -10,6 +10,7 @@ public class CuentaAtras : MonoBehaviour
     //Publica
     private Button botonEmpezar;
     private Button botonSalir;
+    private Button botonReiniciar;
     public Image imagen;
     public Sprite[] numeros;
 
@@ -18,9 +19,10 @@ public class CuentaAtras : MonoBehaviour
     {
         botonEmpezar = GameObject.FindWithTag("EmpezarBoton").GetComponent<Button>();
         botonSalir = GameObject.FindWithTag("Salir").GetComponent<Button>();
+       
         botonEmpezar.onClick.AddListener(Empezar);
         botonSalir.onClick.AddListener(Terminar);
-
+       
     }
 
     void Empezar(){
@@ -33,6 +35,10 @@ public class CuentaAtras : MonoBehaviour
     void Terminar(){
         Debug.Log("Cerrando");
         Application.Quit();
+    }
+
+    public void Reinicio(){
+        SceneManager.LoadScene("MenuInicial");
     }
     IEnumerator cuentaAtras(){
         for(int i = 2;i >= 0; i--){

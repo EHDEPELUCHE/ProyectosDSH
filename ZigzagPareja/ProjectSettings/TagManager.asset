@@ -9,6 +9,7 @@ TagManager:
   - Suelo
   - EstrellaBasica
   - EstrellaEspecial
+  - Reiniciar
   layers:
   - Default
   - TransparentFX

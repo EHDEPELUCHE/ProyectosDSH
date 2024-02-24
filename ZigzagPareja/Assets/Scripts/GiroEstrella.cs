@@ -25,6 +25,6 @@ public class ChoqueBola : MonoBehaviour
     {
         Vector3 posactual = new Vector3 (transform.position.x, 0.5f, transform.position.z);
         Instantiate(particulas, posactual, particulas.transform.rotation);
-        Debug.Log("Se destruye");
+        //Debug.Log("Se destruye");
     }
 }
