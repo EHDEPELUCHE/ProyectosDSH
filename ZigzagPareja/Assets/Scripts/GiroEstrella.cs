@@ -6,11 +6,7 @@ public class ChoqueBola : MonoBehaviour
 {
     public GameObject particulas;
     public float speed = 30;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private GameObject particulasInstance;  // Almacena una referencia a la instancia de "particulas"
 
     // Update is called once per frame
     void Update()
@@ -18,13 +14,10 @@ public class ChoqueBola : MonoBehaviour
         transform.Rotate(Vector3.up, speed * Time.deltaTime, Space.World ); 
     }
 
-    /// <summary>
-    /// This function is called when the MonoBehaviour will be destroyed.
-    /// </summary>
-    private void OnDestroy()
+    private void OnDisable()
     {
         Vector3 posactual = new Vector3 (transform.position.x, 0.5f, transform.position.z);
-        Instantiate(particulas, posactual, particulas.transform.rotation);
-        //Debug.Log("Se destruye");
+        particulasInstance = Instantiate(particulas, posactual, particulas.transform.rotation);
+        Destroy(particulasInstance, 5f);  // Destruye la instancia de "particulas" después de 5 segundos
     }
 }
