@@ -43,7 +43,7 @@ public class jugadorBola : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonDown(0)) // La segunda condicion es para poder usar el raton o pulsar en el movil
             cambiarDireccion();
-        if (gameObject.transform.position.y < 0){
+        if (gameObject.transform.position.y < -5){
             //Debug.Log("Cayendo");
             Destruirya = true;
             SceneManager.LoadScene("Derrota", LoadSceneMode.Single);
