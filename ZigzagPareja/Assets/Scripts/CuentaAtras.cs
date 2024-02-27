@@ -11,15 +11,19 @@ public class CuentaAtras : MonoBehaviour
     private Button botonEmpezar;
     private Button botonSalir;
     private Button botonReiniciar;
+    private AudioSource audioEst;
     public Image imagen;
     public Sprite[] numeros;
+
+     public AudioClip Beep;
 
     // Start is called before the first frame update
     void Start()
     {
         botonEmpezar = GameObject.FindWithTag("EmpezarBoton").GetComponent<Button>();
         botonSalir = GameObject.FindWithTag("Salir").GetComponent<Button>();
-       
+       audioEst = GetComponent<AudioSource>();
+
         botonEmpezar.onClick.AddListener(Empezar);
         botonSalir.onClick.AddListener(Terminar);
        
@@ -41,8 +45,10 @@ public class CuentaAtras : MonoBehaviour
         SceneManager.LoadScene("MenuInicial");
     }
     IEnumerator cuentaAtras(){
+        audioEst.Stop();
         for(int i = 2;i >= 0; i--){
             imagen.sprite = numeros[i];
+            audioEst.PlayOneShot(Beep);
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene("Nivel1");
