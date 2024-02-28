@@ -17,6 +17,7 @@ public class jugadorBola : MonoBehaviour
     public GameObject estrellaesp;
     public Text textoPuntosBack;
     public Text textoPuntos;
+    public AudioClip Est;
     //Privadas
     private Vector3 offSet;
     private float ValX, ValZ;
@@ -25,6 +26,8 @@ public class jugadorBola : MonoBehaviour
     private int maxSuelo = 8;
     private Rigidbody rb;
     private int estrellas=0;
+
+    private AudioSource audioEst;
     public static bool Destruirya = false;
     
     private List<GameObject> instancedObjects = new List<GameObject>();
@@ -36,6 +39,7 @@ public class jugadorBola : MonoBehaviour
         DireccionActual = Vector3.forward;
         rb = GetComponent<Rigidbody>(); 
         Destruirya = false;   
+        audioEst = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -113,12 +117,14 @@ public class jugadorBola : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("EstrellaBasica")){
             //Debug.Log("he tocado una estrella");
+            audioEst.PlayOneShot(Est);
             Destroy(other.gameObject);
             estrellas++;
             textoPuntosBack.text = " " + estrellas;
             textoPuntos.text = " " + estrellas;
         }else if(other.gameObject.CompareTag("EstrellaEspecial")){
             //Debug.Log("he tocado una estrella especial");
+            audioEst.PlayOneShot(Est);
             Destroy(other.gameObject);
             estrellas+=5;
             textoPuntosBack.text = " " + estrellas;
@@ -127,7 +133,16 @@ public class jugadorBola : MonoBehaviour
 
         if(estrellas >= 30){
             Destruirya = true;
-            SceneManager.LoadScene("Nivel2", LoadSceneMode.Single);
+            switch (SceneManager.GetActiveScene().name){
+                case "Nivel1":
+                    SceneManager.LoadScene("Nivel2", LoadSceneMode.Single);
+                    break;
+                case "Nivel2":
+                    SceneManager.LoadScene("Nivel3", LoadSceneMode.Single);
+                    break;
+                default: break;
+            }
+            
         }
     }
 
