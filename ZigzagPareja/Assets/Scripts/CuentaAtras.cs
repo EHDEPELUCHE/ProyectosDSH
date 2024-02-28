@@ -14,8 +14,7 @@ public class CuentaAtras : MonoBehaviour
     private AudioSource audioEst;
     public Image imagen;
     public Sprite[] numeros;
-
-     public AudioClip Beep;
+    public AudioClip Beep;
 
     // Start is called before the first frame update
     void Start()

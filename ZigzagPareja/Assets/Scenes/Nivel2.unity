@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,8 +367,8 @@ GameObject:
   - component: {fileID: 1034024326}
   - component: {fileID: 1034024325}
   - component: {fileID: 1034024324}
+  - component: {fileID: 1034024328}
   - component: {fileID: 1034024323}
-  - component: {fileID: 1034024322}
   - component: {fileID: 1034024321}
   m_Layer: 0
   m_Name: Jugador
@@ -473,26 +473,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1034024322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034024320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6365b5f5ff23ea54bbf3c661a8b376e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camara: {fileID: 1315411774}
-  suelo: {fileID: 8548149062737646434, guid: 474f5fac4355a0440af5ea03ba8c0bd0, type: 3}
-  velocidad: 10
-  estrella: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-  estrellaesp: {fileID: 6425313703188884370, guid: 411078337f6c33245b5e962b8d073d76, type: 3}
-  textoPuntosBack: {fileID: 1774052598}
-  textoPuntos: {fileID: 1244108323}
-  Est: {fileID: 8300000, guid: d172d79050ee9154e9dab37cbea5140e, type: 3}
 --- !u!54 &1034024323
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -606,6 +586,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034024328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034024320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6365b5f5ff23ea54bbf3c661a8b376e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 1315411774}
+  suelo: {fileID: 8548149062737646434, guid: 474f5fac4355a0440af5ea03ba8c0bd0, type: 3}
+  velocidad: 12
+  estrella: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+  estrellaesp: {fileID: 6425313703188884370, guid: 411078337f6c33245b5e962b8d073d76, type: 3}
+  trippy: {fileID: 8465101710219323588, guid: 91719a68d8638cc409e25ae875cfc049, type: 3}
+  textoPuntosBack: {fileID: 1774052598}
+  textoPuntos: {fileID: 1244108323}
+  Est: {fileID: 8300000, guid: d172d79050ee9154e9dab37cbea5140e, type: 3}
 --- !u!1 &1244108321
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +766,7 @@ GameObject:
   - component: {fileID: 1315411774}
   - component: {fileID: 1315411773}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1110,7 +1111,7 @@ GameObject:
   - component: {fileID: 1981096543}
   - component: {fileID: 1981096542}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,75 +1194,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &2127754948
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1669532713775767507, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3623227811319930125, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: speed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3623227811319930125, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: particulas
-      value: 
-      objectReference: {fileID: 8731978743862717803, guid: d1b4a9086f20c4b4799f3e492816e793, type: 3}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6532815
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.27059805
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6532815
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.27059805
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582207434767377492, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-      propertyPath: m_Name
-      value: EstrellaBasica
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1271,6 +1203,5 @@ SceneRoots:
   - {fileID: 1315411775}
   - {fileID: 811787264}
   - {fileID: 1280721735}
-  - {fileID: 2127754948}
   - {fileID: 1034024327}
   - {fileID: 565408708}

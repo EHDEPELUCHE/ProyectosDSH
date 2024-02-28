@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 525211089}
   - component: {fileID: 525211088}
   - component: {fileID: 525211087}
-  - component: {fileID: 525211086}
+  - component: {fileID: 525211093}
   - component: {fileID: 525211092}
   m_Layer: 0
   m_Name: Jugador
@@ -574,26 +574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &525211086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525211085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6365b5f5ff23ea54bbf3c661a8b376e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camara: {fileID: 470324841}
-  suelo: {fileID: 1163039128268667483}
-  velocidad: 10
-  estrella: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
-  estrellaesp: {fileID: 6425313703188884370, guid: 411078337f6c33245b5e962b8d073d76, type: 3}
-  textoPuntosBack: {fileID: 236131781}
-  textoPuntos: {fileID: 352954123}
-  Est: {fileID: 8300000, guid: d172d79050ee9154e9dab37cbea5140e, type: 3}
 --- !u!54 &525211087
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -803,6 +783,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &525211093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525211085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d63415a267a7946956c73ccbe98dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 470324841}
+  suelo: {fileID: 8548149062737646434, guid: 474f5fac4355a0440af5ea03ba8c0bd0, type: 3}
+  velocidad: 10
+  estrella: {fileID: 8307634922003795145, guid: e2dc5ae4eafed5146937198b26160bfd, type: 3}
+  estrellaesp: {fileID: 6425313703188884370, guid: 411078337f6c33245b5e962b8d073d76, type: 3}
+  textoPuntosBack: {fileID: 236131781}
+  textoPuntos: {fileID: 352954123}
+  Est: {fileID: 8300000, guid: d172d79050ee9154e9dab37cbea5140e, type: 3}
 --- !u!1 &927676785
 GameObject:
   m_ObjectHideFlags: 0
