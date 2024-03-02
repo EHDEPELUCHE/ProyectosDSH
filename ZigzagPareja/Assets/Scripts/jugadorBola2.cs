@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
+//using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -30,7 +30,7 @@ public class jugadorBola2 : MonoBehaviour
     private int estrellas=0;
 
     private AudioSource audioEst;
-    public static bool Destruirya = false;
+    
     
     private List<GameObject> instancedObjects = new List<GameObject>();
     // Start is called before the first frame update
@@ -40,7 +40,7 @@ public class jugadorBola2 : MonoBehaviour
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
         rb = GetComponent<Rigidbody>(); 
-        Destruirya = false;
+        jugadorBola1.Destruirya = false;
         audioEst = GetComponent<AudioSource>();
     }
 
@@ -51,7 +51,7 @@ public class jugadorBola2 : MonoBehaviour
             cambiarDireccion();
         if (gameObject.transform.position.y < -5){
             //Debug.Log("Cayendo");
-            Destruirya = true;
+            jugadorBola1.Destruirya = true;
             SceneManager.LoadScene("Derrota", LoadSceneMode.Single);
         }
     }
@@ -205,16 +205,8 @@ public class jugadorBola2 : MonoBehaviour
         }
 
         if(estrellas >= 30){
-            Destruirya = true;
-            switch (SceneManager.GetActiveScene().name){
-                case "Nivel1":
-                    SceneManager.LoadScene("Nivel2", LoadSceneMode.Single);
-                    break;
-                case "Nivel2":
-                    SceneManager.LoadScene("Nivel3", LoadSceneMode.Single);
-                    break;
-                default: break;
-            }
+            jugadorBola1.Destruirya = true;        
+            SceneManager.LoadScene("Nivel3", LoadSceneMode.Single);
         }
     }
 

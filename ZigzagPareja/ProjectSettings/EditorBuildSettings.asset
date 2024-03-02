@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel3.unity
     guid: 863080be1c6fedd47af6fdedcb6b8fae
+  - enabled: 1
+    path: Assets/Scenes/Ganar.unity
+    guid: 1957c097bbf36d14eb6d9a473e388dcd
   m_configObjects: {}

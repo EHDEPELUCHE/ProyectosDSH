@@ -23,7 +23,7 @@ public class ChoqueBola : MonoBehaviour
     }
 
     void EsperaDestruye(){
-        if(jugadorBola1.Destruirya || jugadorBola2.Destruirya)
+        if(jugadorBola1.Destruirya)
             DestroyImmediate(this,true);
     }
 }

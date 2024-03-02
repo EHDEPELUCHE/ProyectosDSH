@@ -361,6 +361,7 @@
 "Assets/Scripts/GiroEstrella.cs"
 "Assets/Scripts/jugadorBola1.cs"
 "Assets/Scripts/jugadorBola2.cs"
+"Assets/Scripts/jugadorBola3.cs"
 -langversion:9.0
 
 /deterministic

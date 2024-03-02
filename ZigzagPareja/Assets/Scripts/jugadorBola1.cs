@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Callbacks;
+//using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -78,10 +78,17 @@ public class jugadorBola1 : MonoBehaviour
             else ValZ += 6.0f;
             GameObject newSuelo = Instantiate(suelo, new Vector3(ValX, 0, ValZ), Quaternion.identity);
             instancedObjects.Add(newSuelo);
+            Destroy(newSuelo, 6f);
             suelos++;
             aleatorio = Random.Range(0.0f, 1.0f);
-            if (aleatorio > 0.7) Instantiate(estrella, new Vector3(Random.Range((ValX - 3),ValX), 1, Random.Range((ValZ - 3), ValZ)), Quaternion.identity);
-            else if (aleatorio < 0.1) Instantiate(estrellaesp, new Vector3(Random.Range((ValX - 3),ValX), 1, Random.Range((ValZ - 3), ValZ)), Quaternion.identity);
+            if (aleatorio > 0.7) {
+                    GameObject newEstrella = Instantiate(estrella, new Vector3(Random.Range((ValX + 3),ValX), 1, Random.Range((ValZ + 3), ValZ)), Quaternion.identity);
+                    Destroy(newEstrella, 6f);
+                }
+                else if (aleatorio < 0.1) {
+                    GameObject newEstrellaEsp = Instantiate(estrellaesp, new Vector3(Random.Range((ValX + 3),ValX), 1, Random.Range((ValZ + 3), ValZ)), Quaternion.identity);
+                    Destroy(newEstrellaEsp, 6f);
+                }
         } else yield return new WaitForSeconds(0.1f);
     }
 
