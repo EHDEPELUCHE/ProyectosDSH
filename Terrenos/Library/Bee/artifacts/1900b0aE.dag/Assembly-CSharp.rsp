@@ -366,6 +366,8 @@
 "Assets/Scripts/ColtM4.cs"
 "Assets/Scripts/Enemigos.cs"
 "Assets/Scripts/gestionVida.cs"
+"Assets/Scripts/gestionVidaJugador.cs"
+"Assets/Scripts/Jugador.cs"
 "Assets/Scripts/MovimientoBala.cs"
 "Assets/Unity-Standard-Assets-master/2D/Scripts/Camera2DFollow.cs"
 "Assets/Unity-Standard-Assets-master/2D/Scripts/CameraFollow.cs"
