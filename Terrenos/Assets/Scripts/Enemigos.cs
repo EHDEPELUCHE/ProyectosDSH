@@ -14,7 +14,7 @@ public class Enemigos : MonoBehaviour
     float myCollisionradius;
     float targetCollisionradius;
     float DistanciadeAtaque = 5f;
-
+    GameObject player;
     float NextAttackTime =0;
     float TimeBetweenattack = 0.5f;
     bool atacando = false;
@@ -22,9 +22,10 @@ public class Enemigos : MonoBehaviour
     void Start()
     {
         vidaRestante = 5.0f;
+        player = GameObject.FindGameObjectWithTag("Player");
         target = GameObject.FindGameObjectWithTag("Player").transform;
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
-
+        //gestionVidaJugador = player.GetComponent<gestionVidaJugador>();
         myCollisionradius = GetComponent<CapsuleCollider>().radius;
         targetCollisionradius = target.GetComponent<CapsuleCollider>().radius;
     }
@@ -61,7 +62,7 @@ public class Enemigos : MonoBehaviour
         while (percent <= 1){
             if(percent >= 0.5f && !hasAppliedDamage){
                 Debug.Log("LE HE PEGADO");
-                gameObject.SendMessage("herido", damage, SendMessageOptions.DontRequireReceiver);
+                player.SendMessage("herido", damage, SendMessageOptions.DontRequireReceiver);
                 hasAppliedDamage = true;
             }
                 percent += Time.deltaTime * attackspeed;

@@ -22,7 +22,7 @@ public class Jugador : MonoBehaviour
     public void GolpeoJug() {
         vidaRestante = GetComponent<gestionVidaJugador>().vida / GetComponent<gestionVidaJugador>().MaxVida;
         barraVida.transform.localScale = new Vector3(vidaRestante, 1, 1);
-        tvida.text = "Vida " + vidaRestante + "/10";
+        tvida.text = "Vida " + 10 * vidaRestante + "/10";
     }
 
     public void FinPartida() {
