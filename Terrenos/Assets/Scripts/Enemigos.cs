@@ -8,13 +8,13 @@ public class Enemigos : MonoBehaviour
 {
     UnityEngine.AI.NavMeshAgent pathfinder;
     Transform target;
+    GameObject player;
+    GameObject controladorRondas;
     public float vidaRestante;
     public UnityEngine.UI.Image barraVida;
-
     float myCollisionradius;
     float targetCollisionradius;
-    float DistanciadeAtaque = 5f;
-    GameObject player;
+    float DistanciadeAtaque = 2f;
     float NextAttackTime =0;
     float TimeBetweenattack = 0.5f;
     bool atacando = false;
@@ -23,6 +23,7 @@ public class Enemigos : MonoBehaviour
     {
         vidaRestante = 5.0f;
         player = GameObject.FindGameObjectWithTag("Player");
+        controladorRondas = GameObject.FindGameObjectWithTag("Rondas");
         target = GameObject.FindGameObjectWithTag("Player").transform;
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
         //gestionVidaJugador = player.GetComponent<gestionVidaJugador>();
@@ -79,5 +80,6 @@ public class Enemigos : MonoBehaviour
 
     public void muerte() {
         Destroy(gameObject);
+        controladorRondas.SendMessage("EnemigoMuerto", SendMessageOptions.DontRequireReceiver);
     }
 }

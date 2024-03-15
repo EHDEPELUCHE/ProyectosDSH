@@ -9,7 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject balaPrefab;
     public  Transform salida;
     public float nextshot = 0.0f;
-    public float fireRate = 0.3f;
+    public float fireRate = 0.05f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextshot && Input.GetMouseButtonDown(0)) {
+        if (Time.time > nextshot && Input.GetMouseButton(0)) {
             nextshot = Time.time + fireRate;
             audioSource.Play();
             animacion.wrapMode = WrapMode.Once;
