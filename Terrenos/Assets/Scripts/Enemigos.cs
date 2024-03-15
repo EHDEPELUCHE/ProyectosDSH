@@ -13,7 +13,7 @@ public class Enemigos : MonoBehaviour
 
     float myCollisionradius;
     float targetCollisionradius;
-    float DistanciadeAtaque = 3f;
+    float DistanciadeAtaque = 5f;
 
     float NextAttackTime =0;
     float TimeBetweenattack = 0.5f;
@@ -33,13 +33,15 @@ public class Enemigos : MonoBehaviour
     void Update()
     {
         if(!atacando){
+           // Debug.Log("Actualiza");
            Vector3 dirtoTarget = (target.position - transform.position).normalized;
             Vector3 TargetPosition = target.position - dirtoTarget * (myCollisionradius + targetCollisionradius + DistanciadeAtaque);
-            pathfinder.SetDestination(target.position);
+            pathfinder.SetDestination(TargetPosition);
             if(Time.time > NextAttackTime){
+                //Debug.Log("Tiempo pasa");
                 NextAttackTime = TimeBetweenattack + Time.time;
                 float sqrDsttoTarget = (target.position - transform.position).sqrMagnitude;
-                if (sqrDsttoTarget <= Mathf.Pow(myCollisionradius + targetCollisionradius + DistanciadeAtaque, 2)-1){
+                if (sqrDsttoTarget <= Mathf.Pow(myCollisionradius + targetCollisionradius + DistanciadeAtaque, 2)){
                     Debug.Log("Estoy al lado");
                     StartCoroutine(Attack());
                 } 
@@ -58,7 +60,8 @@ public class Enemigos : MonoBehaviour
 
         while (percent <= 1){
             if(percent >= 0.5f && !hasAppliedDamage){
-                SendMessage("herido", damage, SendMessageOptions.DontRequireReceiver);
+                Debug.Log("LE HE PEGADO");
+                gameObject.SendMessage("herido", damage, SendMessageOptions.DontRequireReceiver);
                 hasAppliedDamage = true;
             }
                 percent += Time.deltaTime * attackspeed;
