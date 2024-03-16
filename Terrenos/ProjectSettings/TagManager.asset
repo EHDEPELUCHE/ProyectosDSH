@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemigo
   - Rondas
+  - Fire
+  - Spawner2
+  - Spawner3
   layers:
   - Default
   - TransparentFX

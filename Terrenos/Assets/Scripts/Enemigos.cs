@@ -20,6 +20,7 @@ public class Enemigos : MonoBehaviour
     bool atacando = false;
     AudioSource audioSource;
     Animator animator;
+    public AudioClip Growl;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +51,12 @@ public class Enemigos : MonoBehaviour
                 if (sqrDsttoTarget <= Mathf.Pow(myCollisionradius + targetCollisionradius + DistanciadeAtaque, 2)){
                     Debug.Log("Estoy al lado");
                     StartCoroutine(Attack());
-                } 
+                }else{
+                    float aleatorio = Random.Range(0.0f, 10.0f);
+                    if(aleatorio > 9.9f){
+                        audioSource.PlayOneShot(Growl);
+                    }
+                }
             } 
         }
         

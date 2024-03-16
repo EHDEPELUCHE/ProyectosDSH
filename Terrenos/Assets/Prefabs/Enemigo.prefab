@@ -1850,6 +1850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaRestante: 5
   barraVida: {fileID: 3410904856484888080}
+  Growl: {fileID: 8300000, guid: 8cb95a58b430b0248878738236db318a, type: 3}
 --- !u!114 &3389424152891177274
 MonoBehaviour:
   m_ObjectHideFlags: 0
