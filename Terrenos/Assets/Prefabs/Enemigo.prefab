@@ -1744,6 +1744,7 @@ GameObject:
   - component: {fileID: 9199924225809340990}
   - component: {fileID: 1810584511523427767}
   - component: {fileID: 3389424152891177274}
+  - component: {fileID: 7831541545847832077}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemigo
@@ -1778,7 +1779,7 @@ Animator:
   m_GameObject: {fileID: 7626044384643797321}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8f7380da49034cd488ddff94b1ac35d1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2ef8e6599b7f9934e8ff0d64c5325a1f, type: 2}
+  m_Controller: {fileID: 9100000, guid: a336b07c3a8e05c43839d9e11676a2cc, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1892,6 +1893,22 @@ MonoBehaviour:
         m_CallState: 2
   vida: 5
   MaxVida: 5
+--- !u!111 &7831541545847832077
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7626044384643797321}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: de559bbb071ebfd40ab5af80881e75e8, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: de559bbb071ebfd40ab5af80881e75e8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7697542195925785659
 GameObject:
   m_ObjectHideFlags: 0

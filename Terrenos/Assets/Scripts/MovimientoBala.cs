@@ -14,7 +14,7 @@ public class MovimientoBala : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log("tocado");
+       // Debug.Log("tocado");
         other.SendMessage("tocado", damage, SendMessageOptions.DontRequireReceiver);
         Destroy(gameObject);
     }

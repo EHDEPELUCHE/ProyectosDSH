@@ -18,6 +18,7 @@ public class Enemigos : MonoBehaviour
     float NextAttackTime =0;
     float TimeBetweenattack = 0.5f;
     bool atacando = false;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class Enemigos : MonoBehaviour
         //gestionVidaJugador = player.GetComponent<gestionVidaJugador>();
         myCollisionradius = GetComponent<CapsuleCollider>().radius;
         targetCollisionradius = target.GetComponent<CapsuleCollider>().radius;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,8 @@ public class Enemigos : MonoBehaviour
         while (percent <= 1){
             if(percent >= 0.5f && !hasAppliedDamage){
                 Debug.Log("LE HE PEGADO");
+                
+                animator.PlayInFixedTime("Z_Attack",-1, 0.30f);
                 player.SendMessage("herido", damage, SendMessageOptions.DontRequireReceiver);
                 hasAppliedDamage = true;
             }
