@@ -18,10 +18,12 @@ public class Enemigos : MonoBehaviour
     float NextAttackTime =0;
     float TimeBetweenattack = 0.5f;
     bool atacando = false;
+    AudioSource audioSource;
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();  
         vidaRestante = 5.0f;
         player = GameObject.FindGameObjectWithTag("Player");
         controladorRondas = GameObject.FindGameObjectWithTag("Rondas");
@@ -67,6 +69,7 @@ public class Enemigos : MonoBehaviour
                 Debug.Log("LE HE PEGADO");
                 
                 animator.PlayInFixedTime("Z_Attack",-1, 0.30f);
+                audioSource.Play();
                 player.SendMessage("herido", damage, SendMessageOptions.DontRequireReceiver);
                 hasAppliedDamage = true;
             }

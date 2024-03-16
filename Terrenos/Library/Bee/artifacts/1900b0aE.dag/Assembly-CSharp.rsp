@@ -368,6 +368,7 @@
 "Assets/Scripts/gestionVida.cs"
 "Assets/Scripts/gestionVidaJugador.cs"
 "Assets/Scripts/Jugador.cs"
+"Assets/Scripts/MenuController.cs"
 "Assets/Scripts/MovimientoBala.cs"
 "Assets/Scripts/Rondas.cs"
 "Assets/Scripts/ValoresEnemigos.cs"
