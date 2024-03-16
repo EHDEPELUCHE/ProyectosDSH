@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Rondas : MonoBehaviour
 {
     GameObject Spawner;
@@ -11,18 +11,22 @@ public class Rondas : MonoBehaviour
     int numRondaActual = 0;
     int enemigosporCrear = 0;
     int enemigosporMatar = 0;
+    int Rondastot;
 
     // Start is called before the first frame update
     void Start()
     {
         NextRonda();
+        Rondastot = valoresEnemigos.Length;
         Spawner = GameObject.FindGameObjectWithTag("Rondas");
     }
 
     void EnemigoMuerto() {
         enemigosporMatar--;
-        if (enemigosporMatar <= 0)
+        if (enemigosporMatar <= 0 && numRondaActual < Rondastot)
             NextRonda();
+        else if(enemigosporMatar <= 0 && numRondaActual == Rondastot)
+            SceneManager.LoadScene("Victoria");
     }
 
     void NextRonda() {
