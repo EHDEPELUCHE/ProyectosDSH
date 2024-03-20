@@ -10,6 +10,7 @@ namespace VRM
     /// </summary>
     public class Blinker : MonoBehaviour
     {
+        public Animator animator;
         VRMBlendShapeProxy m_blendShapes;
 
         [FormerlySerializedAs("m_interVal")]
@@ -29,7 +30,7 @@ namespace VRM
         public float CloseSeconds = 0.1f;
 
         Coroutine m_coroutine;
-
+        private int hashJoyfJump = 2081823275;
         float m_nextRequest;
         bool m_request;
         public bool Request
@@ -111,6 +112,51 @@ namespace VRM
                 StopCoroutine(m_coroutine);
                 m_coroutine = null;
             }
+        }
+
+        private float Speed = 2f;
+        public void Update(){
+            //Debug.Log("animacion:" + this.animator.GetCurrentAnimatorStateInfo(0).shortNameHash + " inf " + hashJoyfJump );
+             if (Input.GetKeyDown(KeyCode.Space)){
+                animator.PlayInFixedTime("Joyful Jump",-1, 0.30f);
+                StartCoroutine(Smile());
+             }
+                
+               
+            
+        }
+
+        IEnumerator Smile(){
+            float value = 0;
+            while (true)
+                {
+                    value += Time.deltaTime * Speed;
+                    if (value >= 1.0f)
+                    {
+                        break;
+                    }
+                    m_blendShapes.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), value);
+                    yield return null;
+                }
+                Debug.Log("Sonrie");
+                m_blendShapes.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), 1.0f); 
+            
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Joyful Jump"))
+            {
+                Debug.Log("Jumping");
+            }
+               while (true)
+                {
+                    value -= Time.deltaTime * Speed;
+                    if (value < 0f)
+                    {
+                        break;
+                    }
+                    m_blendShapes.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), value);
+                    yield return null;
+                }
+                m_blendShapes.ImmediatelySetValue(BlendShapeKey.CreateFromPreset(BlendShapePreset.Joy), 0.0f);
+            
         }
     }
 }

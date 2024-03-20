@@ -2154,6 +2154,26 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.07768435
       objectReference: {fileID: 0}
+    - target: {fileID: 2280838136240254279, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280838136240254279, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280838136240254279, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[33]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280838136240254279, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[42]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280838136240254279, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[43]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3759841798164417722, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
@@ -2257,7 +2277,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7065077781464348265, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 768992402}
   m_SourcePrefab: {fileID: 100100000, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
 --- !u!1 &565499555
 GameObject:
@@ -2503,6 +2526,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &768992393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7065077781464348265, guid: 50ebf56b6dd1060438dfa459c7164468, type: 3}
+  m_PrefabInstance: {fileID: 436427415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &768992402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768992393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ea1f88e8d74e04e9341465573a4ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 344310195}
+  Interval: 13
+  ClosingTime: 0.06
+  OpeningSeconds: 0.03
+  CloseSeconds: 0.1
 --- !u!1 &946238351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2608,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 0.25
   m_Depth: 0
   m_CullingMask:
@@ -2589,7 +2634,7 @@ Transform:
   m_GameObject: {fileID: 946238351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 0, y: 1.211, z: 1.296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2920,7 +2965,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3560608706170539650, guid: b8e74cc1747cc5342a8fdbdff08080f8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
